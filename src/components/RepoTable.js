@@ -84,9 +84,9 @@ class RepoTable extends React.Component {
 
     render() {
         const { isLoaded, repos } = this.state;
-        return <div>
+        return <div style={{ height: window.screen.availHeight * .45, width: '100%' }}>
             <h2>Repositories</h2>
-            <DataGrid rows={repos} columns={columns} autoPageSize={true} loading={!isLoaded} autoHeight={true} density="compact" />
+            <DataGrid rows={repos} columns={columns} loading={!isLoaded} density="compact" />
         </div>;
     }
 }
