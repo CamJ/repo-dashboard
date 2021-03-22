@@ -9,7 +9,6 @@ class RepoPortal extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            isLoaded: false,
             repos: []
         };
     }
@@ -24,12 +23,12 @@ class RepoPortal extends React.Component {
     }
 
     render() {
-        const { isLoaded, repos } = this.state;
+        const { repos } = this.state;
 
         return <div>
             <h1>Cameron's Repo Dashboard</h1>
-            <RepoInsightRow />
-            <RepoTable />
+            <RepoInsightRow repos={repos} />
+            <RepoTable repos={repos} />
         </div>;
     }
 }
