@@ -113,34 +113,34 @@ class RepoInsightRow extends React.Component {
 
         return <div>
             <h1>Repo Insights</h1>
-            <Grid container direction="row" justify="center">
-                <Grid item xs={3} justify="center">
+            <Grid container direction="row" justify="center" spacing={1}>
+                <Grid item xs={2} justify="center" className="RepoInsight--container" spacing={1}>
                     <div>
-                        <strong>Repos</strong>
+                        <strong className="RepoInsight--header">Repos</strong>
                         <p>Total: {repos.length}</p>
                         <p>Public: {stats.publicRepos} </p>
                         <p>Private : {stats.privateRepos} </p>
                     </div>
                 </Grid>
-                <Grid item xs={3} justify="center">
+                <Grid item xs={2} justify="center" className="RepoInsight--container" spacing={1}>
                     <div>
-                        <strong>Risk</strong>
+                        <strong className="RepoInsight--header">Risk</strong>
                         <p>Average: {stats.riskAverage}</p>
                         <p>Max: {stats.maxRisk} </p>
                         <p>Min : {stats.minRisk} </p>
                     </div>
                 </Grid>
-                <Grid item xs={3} justify="center">
+                <Grid item xs={2} justify="center" className="RepoInsight--container" spacing={1}>
                     <div>
-                        <strong>Size (Mb)</strong>
+                        <strong className="RepoInsight--header">Size (Mb)</strong>
                         <p>Average: {stats.sizeAverage} Mb</p>
                         <p>Max: {stats.maxSize} Mb</p>
                         <p>Min : {stats.minSize} Mb</p>
                     </div>
                 </Grid>
-                <Grid item xs={3} justify="center">
+                <Grid item xs={2} justify="center" className="RepoInsight--container" spacing={1}>
                     <div>
-                        <strong>Commits per Repo</strong>
+                        <strong className="RepoInsight--header">Commits per Repo</strong>
                         <p>Average: {stats.commitAverage}</p>
                         <p>Max: {stats.maxCommit}</p>
                         <p>Min : {stats.minCommit}</p>

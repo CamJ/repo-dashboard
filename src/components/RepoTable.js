@@ -9,57 +9,85 @@ function getSizeInMb(params) {
 
 function getDateFormat(params) {
     var date = new Date(parseInt(params.value));
-    return date.toString();
+    return date.toLocaleString();
 }
 
 const columns = [
-    { field: 'id', hide: true },
-    { field: 'name', headerName: 'Repo Name', flex: 2 },
     {
-        field: 'url', headerName: 'Url', flex: 3, renderCell: (params) => (
-            <Link href={params.value}>
-                { params.value}
-            </Link>),
+        field: 'name',
+        headerName: 'Repo Name',
+        flex: 1.5,
+        headerAlign: 'center',
+        align: 'center',
+        renderCell: (params) => (
+            <Link href={params.getValue('url')}>
+                {params.value}
+            </Link>
+        ),
     },
     {
         flex: 1,
         field: 'risk_score',
         headerName: 'Risk',
         type: 'number',
+        headerAlign: 'center',
+        align: 'center',
+        cellClassName: (params) => {
+            var riskClass = 'medium';
+            if (params.value > 7) {
+                riskClass = 'high'
+            } else if (params.value < 4) {
+                riskClass = 'low';
+            }
+            return 'TableCell--' + riskClass;
+        }
     },
     {
         flex: 1,
         field: 'type',
         headerName: 'Repo Type',
+        headerAlign: 'center',
+        align: 'center',
     },
     {
         flex: 1,
         field: 'clone_count',
         headerName: 'Clones',
         type: 'number',
+        headerAlign: 'center',
+        align: 'center',
     },
     {
         flex: 1,
         field: 'contribution_count',
         headerName: 'Contributors',
         type: 'number',
+        headerAlign: 'center',
+        align: 'center',
     },
     {
         flex: 1,
         field: 'commit_count',
         headerName: 'Commits',
         type: 'number',
+        headerAlign: 'center',
+        align: 'center',
     },
     {
         flex: 1,
         field: 'sizeInMb',
         headerName: 'Size (mb)',
+        headerAlign: 'center',
+        align: 'center',
         valueGetter: getSizeInMb
     },
     {
         field: 'last_activity',
         headerName: 'Last Activity',
-        flex: 2,
+        flex: 1,
+        headerAlign: 'center',
+        align: 'center',
+        type: 'number',
         valueFormatter: getDateFormat,
     },
 ];
