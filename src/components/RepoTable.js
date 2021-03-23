@@ -3,6 +3,34 @@ import React from 'react';
 import { DataGrid } from '@material-ui/data-grid';
 import Link from '@material-ui/core/Link';
 
+// Component that renders all repositories in a DataGrid component
+class RepoTable extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            isLoaded: props.repos.length > 0,
+            repos: props.repos,
+        };
+    }
+
+    componentDidUpdate(_, prevState, __) {
+        if (prevState.repos.length === 0) {
+            this.setState({
+                isLoaded: true,
+                repos: this.props.repos,
+            })
+        }
+    }
+
+    render() {
+        const { isLoaded, repos } = this.state;
+        return <div style={{ height: window.screen.availHeight * .45, width: '100%' }}>
+            <h2>Repositories</h2>
+            <DataGrid rows={repos} columns={columns} loading={!isLoaded} density="compact" />
+        </div>;
+    }
+}
+
 function getSizeInMb(params) {
     return `${Math.floor(params.getValue('size') / 1024)}`;
 }
@@ -91,32 +119,5 @@ const columns = [
         valueFormatter: getDateFormat,
     },
 ];
-
-class RepoTable extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            isLoaded: props.repos.length > 0,
-            repos: props.repos,
-        };
-    }
-
-    componentDidUpdate(_, prevState, __) {
-        if (prevState.repos.length === 0) {
-            this.setState({
-                isLoaded: true,
-                repos: this.props.repos,
-            })
-        }
-    }
-
-    render() {
-        const { isLoaded, repos } = this.state;
-        return <div style={{ height: window.screen.availHeight * .45, width: '100%' }}>
-            <h2>Repositories</h2>
-            <DataGrid rows={repos} columns={columns} loading={!isLoaded} density="compact" />
-        </div>;
-    }
-}
 
 export default RepoTable;

@@ -5,6 +5,7 @@ import RepoTable from './RepoTable';
 
 import fetchRepositories from '../services/Repositories';
 
+// Component that renders the overall portal and all sub-components
 class RepoPortal extends React.Component {
     constructor(props) {
         super(props);
@@ -13,6 +14,7 @@ class RepoPortal extends React.Component {
         };
     }
 
+    // On first mount, load in the repositories
     componentDidMount() {
         fetchRepositories().then((value) => {
             this.setState({
