@@ -14,12 +14,13 @@
 * A higher Risk is bad
 
 
-User Based Assumptions - **All of these could be validated or disgarded with some product discovery and/or talking to customers and/or talking to product managers**
+User Based Assumptions - **All of these could be validated or discarded with some product discovery and/or talking to customers and/or talking to product managers**
 * Users find Risk, Repos, Size, and Commits as the most useful insights 
 * Users find size is more useful visually in Mb than Kb
 * Users don't care what the url is but just that they can navigate to the repo (No visible url in the table)
 * Users don't care to have a constant scrolling list and pagination + filtering/sorting will suffice. 
-    * Ideally a search would be included. 
+    * Ideally a search would be included.
+    * Technically can filter to "equals" value so some semblance of a search exists.
 
 
 ### Limitations ###
@@ -43,7 +44,7 @@ User Based Assumptions - **All of these could be validated or disgarded with som
 ### Future Changes and/or Additions ###
 * If this were a real project, these are the things I would be thinking about: 
     * UI Changes and Additions
-        * Have somebody with a better eye for UI design upgrade the design :) 
+        * Have somebody with a better eye for UI upgrade the design :) 
         * Include user search functionality
         * Better analysis/insight or repositories + ability to drilldown. Nice charts would be a plus as well. 
         * User based date formatting
