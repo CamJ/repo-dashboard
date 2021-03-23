@@ -1,5 +1,12 @@
 ### Repository Portal ###
 
+### Time Allotment
+~ 1 hr - basic react app structure and widget creation \
+~ 1 hr - data grid and insight creation \
+~ 1 hr - UI updates and pixel pushing \
+~ 1 hr - cleanup and documentation
+
+
 
 ### Assumptions ###
 * Date type is passed over the API as a millisecondsSinceEpoch long integer (I accidently randomly generated it as a millisecondsSinceEpoch string so that's how it's handled in the app)
