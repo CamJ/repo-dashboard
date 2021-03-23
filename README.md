@@ -13,3 +13,8 @@ You will also see any lint errors in the console.
 
 ### HW comments
 * Please see [documentation](documentation) folder for initial design, data generation, and comments on the project. 
+
+
+### End Result
+Repo Dashboard
+![Result](documentation/result.png)
